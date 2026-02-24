@@ -10,17 +10,17 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  deploy-github-pages:
     name: Portfolio Deploy
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: Setup Pages
+      - name: Setup pages
         uses: actions/configure-pages@v4
         
       - name: Upload artifact
@@ -28,6 +28,14 @@ jobs:
         with:
           path: '.'
           
-      - name: Deploy to GitHub Pages
+      - name: Deploy to gitHub pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Generate deploy summary
+        if: always()
+        run: |
+          echo "## 🚀 Terragrunt Apply Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**URL:** \`${{ steps.deployment.outputs.page_url }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
