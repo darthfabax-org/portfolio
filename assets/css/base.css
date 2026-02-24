@@ -1,0 +1,83 @@
+/* ============================================================
+   base.css — Global Base Styles
+   Typography, body, global pseudo-elements.
+   ============================================================ */
+
+body {
+  background-color: var(--color-bg-0);
+  color: var(--color-white);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  overflow-x: hidden;
+}
+
+/* ── Scanlines overlay ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.07) 2px,
+    rgba(0, 0, 0, 0.07) 4px
+  );
+  pointer-events: none;
+  z-index: var(--z-scanline);
+}
+
+/* ── Vignette overlay ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.45) 100%);
+  pointer-events: none;
+  z-index: var(--z-overlay);
+}
+
+/* ── Skip link (accessibility) ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  background: var(--color-green);
+  color: var(--color-bg-0);
+  padding: var(--space-2) var(--space-4);
+  font-weight: var(--weight-semi);
+  font-size: var(--text-sm);
+  z-index: 9999;
+  border-radius: var(--border-radius);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--color-green-muted);
+  color: var(--color-green);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green-dim);
+}

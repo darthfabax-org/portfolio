@@ -1,0 +1,154 @@
+/* ============================================================
+   responsive.css — Breakpoints & Responsive Overrides
+   Mobile-first adjustments.
+   ============================================================ */
+
+/* ── Tablet: ≤ 768px ── */
+@media (max-width: 768px) {
+  :root {
+    --space-20: 60px;
+    --space-16: 40px;
+  }
+
+  .topbar {
+    padding: 0 var(--space-4);
+  }
+
+  .topbar__at,
+  .topbar__separator {
+    display: none;
+  }
+
+  .topbar__nav {
+    gap: var(--space-3);
+  }
+
+  .topbar__lang-pill {
+    display: none;
+  }
+
+  .hero {
+    padding: var(--space-10) var(--space-4);
+    background-size: 24px 24px;
+  }
+
+  .section {
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .terminal__body {
+    padding: var(--space-5);
+  }
+
+  .terminal__title {
+    display: none;
+  }
+
+  .cloud-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pipeline {
+    padding: var(--space-4);
+    gap: var(--space-1);
+  }
+
+  .timeline__item {
+    grid-template-columns: 90px 1fr;
+    gap: var(--space-4);
+  }
+}
+
+/* ── Mobile: ≤ 480px ── */
+@media (max-width: 480px) {
+  .topbar__nav {
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+  }
+
+  .topbar__chip {
+    padding: 2px 8px 2px 3px;
+  }
+
+  .topbar__avatar {
+    width: 16px;
+    height: 16px;
+    font-size: 7px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cloud-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pipeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pipeline__step {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .pipeline__arrow {
+    transform: rotate(90deg);
+    display: none;
+  }
+
+  .pipeline__box {
+    width: 100%;
+    text-align: center;
+    margin-bottom: var(--space-1);
+  }
+
+  .metric {
+    flex-wrap: wrap;
+  }
+
+  .metric__bar {
+    flex: 1 1 100%;
+    order: 3;
+  }
+
+  .contact-row__key {
+    width: 70px;
+  }
+
+  .terminal__prompt {
+    font-size: var(--text-xs);
+  }
+
+  .footer {
+    padding: var(--space-4);
+    font-size: var(--text-xs);
+  }
+
+  .timeline__item {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .timeline__meta {
+    padding-top: 0;
+  }
+
+  .terminal__uptime-badge {
+    display: none;
+  }
+}
+
+/* ── Wide screens: ≥ 1200px ── */
+@media (min-width: 1200px) {
+  .hero,
+  .section {
+    max-width: var(--max-width);
+  }
+}
