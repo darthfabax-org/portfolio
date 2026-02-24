@@ -35,7 +35,7 @@ jobs:
       - name: Generate deploy summary
         if: always()
         run: |
-          echo "## 🚀 Terragrunt Apply Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🌍 DarthFabax Portfolio Deployment Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**URL:** \`${{ steps.deployment.outputs.page_url }}\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
