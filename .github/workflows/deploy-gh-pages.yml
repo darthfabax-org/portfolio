@@ -44,9 +44,14 @@ jobs:
       # ===========================================
       # 1.4 Deploy to GitHub Pages
       # ===========================================
-      - name: Deploy to GitHub Pages
+      - name: Deploy to github pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # ===========================================
+      # 1.5 Generate deploy summary
+      # ===========================================
+      - name: Generate deploy summary
         if: always()
         run: |
           echo "## 🌍 DarthFabax Portfolio Deployment Summary" >> $GITHUB_STEP_SUMMARY
