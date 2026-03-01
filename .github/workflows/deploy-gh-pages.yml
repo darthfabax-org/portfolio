@@ -10,6 +10,9 @@ permissions:
   id-token: write
 
 jobs:
+  # ===========================================
+  # 1. DEPLOY TO GITHUB PAGES
+  # ===========================================
   deploy-github-pages:
     name: Portfolio Deploy
     environment:
@@ -19,15 +22,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Setup pages
         uses: actions/configure-pages@v4
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
-          
+          path: "."
+
       - name: Deploy to gitHub pages
         id: deployment
         uses: actions/deploy-pages@v4
@@ -39,3 +42,19 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**URL:** \`${{ steps.deployment.outputs.page_url }}\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+
+  # ===========================================
+  # 2. SLACK NOTIFICATION
+  # ===========================================
+  notify-slack:
+    name: Notify Drift Status
+    needs: deploy-github-pages
+    if: always()
+    uses: ./.github/workflows/slack-notify.yml
+    secrets: inherit
+    with:
+      job_status: ${{ needs.deploy-github-pages.result }}
+      message: |
+        Terragrunt Plan completed
+      workflow_name: "Terragrunt Drift Detection"
+      mention_on_failure: "@channel"
