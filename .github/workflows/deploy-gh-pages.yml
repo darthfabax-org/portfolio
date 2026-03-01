@@ -23,7 +23,6 @@ jobs:
 
     outputs:
       page_url: ${{ steps.deployment.outputs.page_url }}
-      name: ${{ job.status.name }}
 
     steps:
       # ===========================================
@@ -76,6 +75,6 @@ jobs:
     with:
       job_status: ${{ needs.deploy-github-pages.result }}
       message: |
-        ${{ needs.deploy-github-pages.outputs.name }} workflow deployed to ${{ needs.deploy-github-pages.outputs.page_url }}
+        ${{ github.workflow }} workflow deployed to ${{ needs.deploy-github-pages.outputs.page_url }}
       workflow_name: "GitHub Pages Deploy"
       mention_on_failure: "@channel"
