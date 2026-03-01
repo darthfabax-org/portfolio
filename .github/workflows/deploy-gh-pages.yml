@@ -50,7 +50,7 @@ jobs:
     name: Notify Drift Status
     needs: deploy-github-pages
     if: always()
-    uses: ./.github/workflows/slack-notify.yml
+    uses: darthfabax-org/actions/.github/workflows/slack-notify.yml@main
     secrets: inherit
     with:
       job_status: ${{ needs.deploy-github-pages.result }}
