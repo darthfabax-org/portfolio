@@ -76,5 +76,5 @@ jobs:
       job_status: ${{ needs.deploy-github-pages.result }}
       message: |
         ${{ github.workflow }} workflow deployed to ${{ needs.deploy-github-pages.outputs.page_url }}
-      workflow_name: "GitHub Pages Deploy"
+      workflow_name: ${{ github.workflow }}
       mention_on_failure: "@channel"
