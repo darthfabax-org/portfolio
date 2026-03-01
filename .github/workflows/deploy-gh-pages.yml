@@ -15,10 +15,14 @@ jobs:
   # ===========================================
   deploy-github-pages:
     name: Portfolio Deploy
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       # ===========================================
