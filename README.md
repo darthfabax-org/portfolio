@@ -21,26 +21,35 @@ python3 -m http.server 8080
 
 ---
 
+## 🛠 Core Tech
+
+- **UX/UI:** Vanilla CSS with Custom Properties (Design Tokens).
+- **Logic:** Functional ES6+ JavaScript.
+- **I18n:** Custom client-side translation engine.
+- **CI/CD:** Automated OIDC-based deployment.
+
+---
+
 ## 📂 Folder Structure
 
 ```bash
 .
-├── index.html                  # Main Entry Point (Semantic HTML5)
-├── README.md                   # Project documentation
+├── index.html                                     # Main Entry Point (Semantic HTML5)
+├── README.md                                      # Project documentation
 ├── assets/
 │   ├── css/
-│   │   ├── variables.css       # Design Tokens (Color Palette, Spacing)
-│   │   ├── reset.css           # Cross-browser normalization
-│   │   ├── layout.css          # Grid/Flexbox containers
-│   │   ├── components.css      # Terminal UI, badges, pipeline visualization
-│   │   └── animations.css      # Keyframes & Reveal effects
+│   │   ├── variables.css                          # Design Tokens (Color Palette, Spacing)
+│   │   ├── reset.css                              # Cross-browser normalization
+│   │   ├── layout.css                             # Grid/Flexbox containers
+│   │   ├── components.css                         # Terminal UI, badges, pipeline visualization
+│   │   └── animations.css                         # Keyframes & Reveal effects
 │   ├── js/
-│   │   ├── i18n.js             # Translation engine logic
-│   │   ├── clock.js            # Real-time topbar clock
-│   │   └── animations.js       # Scroll Observer & Terminal typing
+│   │   ├── i18n.js                                # Translation engine logic
+│   │   ├── clock.js                               # Real-time topbar clock
+│   │   └── animations.js                          # Scroll Observer & Terminal typing
 │   └── icons/
-│       └── favicon.ico         # Branding assets
-└── .github/workflows/          # CI/CD Pipeline (Auto-deploy)
+│       └── favicon.ico                            # Branding assets
+└── .github/workflows/deploy-gh-pages.yml          # CI/CD Pipeline (Auto-deploy)
 ```
 
 ---
@@ -61,13 +70,15 @@ The pipeline is defined in `.github/workflows/deploy-gh-pages.yml` and triggers 
 
 ### Infrastructure Details
 
-* **Provider:** GitHub Pages
-* **Orchestrator:** GitHub Actions
-* **Deployment Strategy:** Continuous Deployment (CD)
-* **Access Point:** The site is served over HTTPS at your specific GitHub Pages domain.
+- **Provider:** GitHub Pages
+- **Orchestrator:** GitHub Actions
+- **Deployment Strategy:** Continuous Deployment (CD)
+- **Access Point:** The site is served over HTTPS at your specific GitHub Pages domain.
 
 ---
 
-## License
+## ⚖️ License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Pages](https://img.shields.io/badge/Status-Live-brightgreen)](https://darthfabax-org.github.io/portfolio/)
+![Architecture](https://img.shields.io/badge/Architecture-Vanilla_JS-orange)
