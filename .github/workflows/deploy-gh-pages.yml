@@ -47,7 +47,7 @@ jobs:
   # 2. SLACK NOTIFICATION
   # ===========================================
   notify-slack:
-    name: Notify Drift Status
+    name: Notify GitHub Pages Deploy Status
     needs: deploy-github-pages
     if: always()
     uses: darthfabax-org/actions/.github/workflows/slack-notify.yml@main
@@ -55,6 +55,6 @@ jobs:
     with:
       job_status: ${{ needs.deploy-github-pages.result }}
       message: |
-        Terragrunt Plan completed
-      workflow_name: "Terragrunt Drift Detection"
+        GitHub Pages Deploy completed to https://darthfabax.github.io/portfolio/
+      workflow_name: "GitHub Pages Deploy"
       mention_on_failure: "@channel"
