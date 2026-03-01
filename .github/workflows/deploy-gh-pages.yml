@@ -19,23 +19,34 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
+      # ===========================================
+      # 1.1 Checkout repository
+      # ===========================================
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # ===========================================
+      # 1.2 Setup pages
+      # ===========================================
       - name: Setup pages
         uses: actions/configure-pages@v4
 
+      # ===========================================
+      # 1.3 Upload artifact
+      # ===========================================
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "."
 
-      - name: Deploy to gitHub pages
+      # ===========================================
+      # 1.4 Deploy to GitHub Pages
+      # ===========================================
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Generate deploy summary
         if: always()
         run: |
           echo "## 🌍 DarthFabax Portfolio Deployment Summary" >> $GITHUB_STEP_SUMMARY
@@ -55,6 +66,6 @@ jobs:
     with:
       job_status: ${{ needs.deploy-github-pages.result }}
       message: |
-        GitHub Pages Deploy completed to https://darthfabax.github.io/portfolio/
+        GitHub Pages Deploy completed to ${{ needs.deploy-github-pages.outputs.page_url }}
       workflow_name: "GitHub Pages Deploy"
       mention_on_failure: "@channel"
