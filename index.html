@@ -107,8 +107,18 @@
             <p><span class="ls__perms">drwxr-xr-x</span><span class="ls__dir">targets/</span><span class="ls__comment"># Ubuntu · RHEL · Windows Server</span></p>
           </div>
 
-          <div class="terminal__line terminal__line--idle" data-delay="5" aria-hidden="true">
-            <span class="terminal__prompt">darthfabax@web:~$</span>
+          <div class="terminal__line terminal__line--idle" data-delay="5">
+            <span class="terminal__prompt" aria-hidden="true">darthfabax@web:~$</span>
+            <input
+              type="text"
+              class="terminal__input"
+              id="js-terminal-input"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-label="Terminal — escribe un comando"
+            />
             <span class="terminal__cursor" aria-hidden="true"></span>
           </div>
 
@@ -304,7 +314,7 @@
         <div class="metric" data-width="97">
           <span class="metric__label" data-i18n="pipeline.metric1">Build success rate</span>
           <div class="metric__bar" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100">
-            <div class="metric__fill metric__fill--green"></div>
+            <div class="metric__fill metric__fill--gradient"></div>
           </div>
           <span class="metric__value metric__value--green">97%</span>
         </div>
@@ -325,7 +335,7 @@
         <div class="metric" data-width="100">
           <span class="metric__label" data-i18n="pipeline.metric4">Infrastructure as Code</span>
           <div class="metric__bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-            <div class="metric__fill metric__fill--green"></div>
+            <div class="metric__fill metric__fill--gradient"></div>
           </div>
           <span class="metric__value metric__value--green">100%</span>
         </div>
@@ -417,6 +427,7 @@
   <script src="assets/js/clock.js"      defer></script>
   <script src="assets/js/animations.js" defer></script>
   <script src="assets/js/i18n.js"       defer></script>
+  <script src="assets/js/terminal.js"   defer></script>
 
 </body>
 </html>

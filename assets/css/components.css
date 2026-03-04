@@ -167,6 +167,60 @@
   margin-left: 2px;
 }
 
+/* ── Interactive input ── */
+.terminal__input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-white);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  line-height: inherit;
+  flex: 1;
+  min-width: 4ch;
+  padding: 0;
+  caret-color: var(--color-green);
+}
+
+/* Hide the static block cursor when input is focused */
+.terminal__input:focus ~ .terminal__cursor {
+  display: none;
+}
+
+/* ── Terminal error / sudo hint ── */
+.terminal__error-line {
+  color: var(--color-red);
+  margin-bottom: 2px;
+}
+
+.terminal__error-label {
+  color: var(--color-red);
+  font-weight: var(--weight-semi);
+}
+
+.terminal__error-cmd {
+  color: var(--color-yellow);
+}
+
+.terminal__error-msg {
+  color: var(--color-red);
+}
+
+.terminal__sudo-hint {
+  color: var(--color-gray);
+  font-style: italic;
+  font-size: var(--text-sm);
+}
+
+.terminal__sudo-arrow {
+  color: var(--color-green-dim);
+}
+
+.terminal__sudo-cmd {
+  color: var(--color-green);
+  font-style: normal;
+}
+
 /* ── Skill level bar ── */
 .skill-card__level {
   margin-top: var(--space-3);
@@ -277,6 +331,10 @@
   padding: var(--space-8);
 }
 
+.pipeline + .pipeline {
+  margin-top: var(--space-6);
+}
+
 .pipeline__step {
   display: flex;
   align-items: center;
@@ -352,8 +410,9 @@
   transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.metric__fill--green { background: var(--color-green); }
-.metric__fill--cyan  { background: var(--color-cyan); }
+.metric__fill--green    { background: var(--color-green); }
+.metric__fill--cyan     { background: var(--color-cyan); }
+.metric__fill--gradient { background: linear-gradient(90deg, var(--color-green), var(--color-cyan)); }
 
 .metric__value {
   font-size: var(--text-sm);
@@ -571,10 +630,10 @@
 .timeline__item::before {
   content: '';
   position: absolute;
-  left: calc(-1 * var(--space-8) - 3px);
-  top: 6px;
-  width: 7px;
-  height: 7px;
+  left: calc(-1 * var(--space-8) - 4px);
+  top: 5px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--color-bg-0);
   border: 1px solid var(--color-green-dim);
