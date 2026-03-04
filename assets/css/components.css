@@ -157,6 +157,21 @@
 .ls__dir     { color: var(--color-cyan); }
 .ls__comment { color: var(--color-gray); font-style: italic; margin-left: var(--space-4); }
 
+.ls__dir-link {
+  color: var(--color-cyan);
+  text-decoration: none;
+  transition:
+    text-shadow var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.ls__dir-link:hover {
+  color: #5ee8e8;
+  text-shadow: 0 0 10px rgba(0, 212, 212, 0.5);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 212, 212, 0.5);
+}
+
 /* ── Cursor ── */
 .terminal__cursor {
   display: inline-block;
@@ -219,6 +234,16 @@
 .terminal__sudo-cmd {
   color: var(--color-green);
   font-style: normal;
+}
+
+/* ── sudo password prompt ── */
+.terminal__sudo-prompt {
+  color: var(--color-gray-light);
+  margin-bottom: var(--space-1);
+}
+
+.terminal__sudo-user {
+  color: var(--color-cyan);
 }
 
 /* ── Skill level bar ── */
@@ -626,12 +651,12 @@
   align-items: flex-start;
 }
 
-/* Timeline dot */
+/* Timeline dot — center on the 1px border (border-box: item starts at border+padding=33px) */
 .timeline__item::before {
   content: '';
   position: absolute;
-  left: calc(-1 * var(--space-8) - 4px);
-  top: 5px;
+  left: calc(-1 * var(--space-8) - 4.5px);
+  top: 7px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
