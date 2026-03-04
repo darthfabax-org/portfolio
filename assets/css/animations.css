@@ -36,9 +36,50 @@
   }
 }
 
+@keyframes terminal-boot {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse-green {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(57, 255, 131, 0.3);
+    color: var(--color-green);
+  }
+  50% {
+    text-shadow: 0 0 14px rgba(57, 255, 131, 0.7), 0 0 28px rgba(57, 255, 131, 0.25);
+    color: #7fffb2;
+  }
+}
+
+@keyframes pipeline-flow {
+  0%, 100% { opacity: 0.35; color: var(--color-green-dim); }
+  50%       { opacity: 1;    color: var(--color-green); }
+}
+
+@keyframes timeline-dot-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(57, 255, 131, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(57, 255, 131, 0.8), 0 0 30px rgba(57, 255, 131, 0.2);
+  }
+}
+
 /* ── Cursor blink ── */
 .terminal__cursor {
   animation: blink 1s step-end infinite;
+}
+
+/* ── Terminal boot ── */
+.terminal {
+  animation: terminal-boot 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 /* ── Terminal lines (JS-driven via .is-visible) ── */
@@ -47,10 +88,10 @@
   animation: fadeIn 0.15s ease forwards;
 }
 
-/* ── Section reveal on scroll ── */
+/* ── Section reveal on scroll — more dramatic ── */
 .section {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(24px);
   transition:
     opacity var(--transition-slow),
     transform var(--transition-slow);
@@ -64,11 +105,12 @@
 /* ── Skill cards stagger ── */
 .skill-card {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(10px);
   transition:
     opacity 0.4s ease,
     transform 0.4s ease,
-    background var(--transition-normal);
+    background var(--transition-normal),
+    box-shadow var(--transition-normal);
 }
 
 .skill-card.is-visible {
@@ -86,7 +128,7 @@
 /* ── Cloud cards stagger ── */
 .cloud-card {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(10px);
   transition:
     opacity 0.4s ease,
     transform 0.4s ease,
@@ -105,7 +147,7 @@
 /* ── Timeline items stagger ── */
 .timeline__item {
   opacity: 0;
-  transform: translateX(-8px);
+  transform: translateX(-12px);
   transition:
     opacity 0.4s ease,
     transform 0.4s ease;
@@ -119,6 +161,28 @@
 .timeline__item:nth-child(1) { transition-delay: 0ms; }
 .timeline__item:nth-child(2) { transition-delay: 100ms; }
 .timeline__item:nth-child(3) { transition-delay: 200ms; }
+
+/* ── Timeline active dot ── */
+.timeline__item--active::before {
+  animation: timeline-dot-glow 2.5s ease-in-out infinite;
+}
+
+/* ── Section header ## prefix glow ── */
+.section__header::before {
+  animation: glow-pulse-green 4s ease-in-out infinite;
+}
+
+/* ── Pipeline arrows flow ── */
+.pipeline__arrow {
+  animation: pipeline-flow 2s ease-in-out infinite;
+}
+
+.pipeline__step:nth-child(1) .pipeline__arrow { animation-delay: 0ms; }
+.pipeline__step:nth-child(2) .pipeline__arrow { animation-delay: 250ms; }
+.pipeline__step:nth-child(3) .pipeline__arrow { animation-delay: 500ms; }
+.pipeline__step:nth-child(4) .pipeline__arrow { animation-delay: 750ms; }
+.pipeline__step:nth-child(5) .pipeline__arrow { animation-delay: 1000ms; }
+.pipeline__step:nth-child(6) .pipeline__arrow { animation-delay: 1250ms; }
 
 /* ── Topbar ── */
 .topbar {
