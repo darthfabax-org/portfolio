@@ -23,8 +23,10 @@
     gap: var(--space-3);
   }
 
+  /* Lang pill visible on tablet as a compact pill */
   .topbar__lang-pill {
-    display: none;
+    padding: 2px var(--space-2);
+    font-size: 10px;
   }
 
   .hero {
@@ -65,72 +67,166 @@
 
 /* ── Mobile: ≤ 480px ── */
 @media (max-width: 480px) {
-  .topbar__nav {
+
+  /* ── Scroll padding accounts for topbar ── */
+  html {
+    scroll-padding-top: calc(var(--topbar-height) + 8px);
+  }
+
+  /* ── Topbar: compact chip, scrollable nav ── */
+  .topbar {
+    padding: 0 var(--space-3);
     gap: var(--space-2);
-    font-size: var(--text-xs);
+  }
+
+  /* Keep only the avatar in the chip — hide text labels */
+  .topbar__prompt,
+  .topbar__host {
+    display: none;
   }
 
   .topbar__chip {
-    padding: 2px 8px 2px 3px;
+    padding: 2px 6px 2px 3px;
   }
 
   .topbar__avatar {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     font-size: 7px;
   }
 
+  .topbar__clock {
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  /* Show lang pill on mobile — overrides the tablet hide */
+  .topbar__lang-pill {
+    display: block;
+    padding: 2px 6px;
+    font-size: 10px;
+    flex-shrink: 0;
+  }
+
+  /* Nav: horizontally scrollable to prevent overflow */
+  .topbar__nav {
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .topbar__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    min-height: auto;
+    padding: var(--space-8) var(--space-3) var(--space-10);
+  }
+
+  /* ── Terminal ── */
+  .terminal__body {
+    padding: var(--space-4) var(--space-3);
+    min-height: 0;
+  }
+
+  .terminal__prompt {
+    font-size: var(--text-xs);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── Skills ── */
   .skills-grid {
     grid-template-columns: 1fr;
   }
 
+  /* ── Cloud ── */
   .cloud-grid {
     grid-template-columns: 1fr;
   }
 
+  /* ── Pipeline ── */
   .pipeline {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    padding: var(--space-3);
   }
 
   .pipeline__step {
-    flex-direction: row;
     width: 100%;
-  }
-
-  .pipeline__arrow {
-    transform: rotate(90deg);
-    display: none;
   }
 
   .pipeline__box {
     width: 100%;
-    text-align: center;
+    text-align: left;
+    white-space: normal;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
     margin-bottom: var(--space-1);
   }
 
+  .pipeline__arrow {
+    display: none;
+  }
+
+  .metrics {
+    margin-top: var(--space-6);
+  }
+
   .metric {
+    gap: var(--space-2);
     flex-wrap: wrap;
+  }
+
+  .metric__label {
+    flex: 1 1 60%;
+    font-size: var(--text-xs);
+  }
+
+  .metric__value {
+    font-size: var(--text-xs);
+    width: auto;
   }
 
   .metric__bar {
     flex: 1 1 100%;
     order: 3;
+    margin-top: 2px;
+  }
+
+  /* ── Contact ── */
+  .contact-block {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .contact-row {
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-1);
+    min-width: 0;
   }
 
   .contact-row__key {
-    width: 70px;
-  }
-
-  .terminal__prompt {
+    width: 64px;
+    flex-shrink: 0;
     font-size: var(--text-xs);
   }
 
-  .footer {
-    padding: var(--space-4);
+  /* Truncate long URLs on small screens */
+  .contact-row__value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
     font-size: var(--text-xs);
   }
 
+  /* ── Timeline ── */
   .timeline__item {
     grid-template-columns: 1fr;
     gap: var(--space-2);
@@ -140,8 +236,23 @@
     padding-top: 0;
   }
 
+  /* ── Footer ── */
+  .footer {
+    padding: var(--space-4) var(--space-3);
+    font-size: var(--text-xs);
+  }
+
   .terminal__uptime-badge {
     display: none;
+  }
+
+  /* ── Section spacing ── */
+  .section {
+    padding: var(--space-10) var(--space-3);
+  }
+
+  .section__header {
+    margin-bottom: var(--space-8);
   }
 }
 
