@@ -50,9 +50,17 @@
   flex-shrink: 0;
 }
 
-.topbar__prompt { color: var(--color-green); }
-.topbar__at     { color: var(--color-border); }
-.topbar__host   { color: var(--color-cyan); }
+.topbar__prompt {
+  color: var(--color-green);
+}
+
+.topbar__at {
+  color: var(--color-gray-light);
+}
+
+.topbar__host {
+  color: var(--color-cyan);
+}
 
 .topbar__separator {
   color: var(--color-border);

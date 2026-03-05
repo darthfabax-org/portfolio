@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"        content="DevOps Engineer — Automation, Cloud Infrastructure &amp; CI/CD" />
-  <meta name="author"             content="Fabian Aguilar" />
-  <meta property="og:title"       content="Fabian Aguilar · DevOps Engineer" />
+  <meta name="description" content="DevOps Engineer — Automation, Cloud Infrastructure &amp; CI/CD" />
+  <meta name="author" content="Fabian Aguilar" />
+  <meta property="og:title" content="Fabian Aguilar · DevOps Engineer" />
   <meta property="og:description" content="DevOps Engineer — Automation, Cloud Infrastructure &amp; CI/CD" />
-  <meta property="og:type"        content="website" />
+  <meta property="og:type" content="website" />
 
   <title>Fabian Aguilar</title>
-  <link rel="icon" type="image/svg+xml"  href="assets/icons/favicon.svg" />
-  <link rel="icon" type="image/x-icon"   href="assets/icons/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Fira+Code:wght@300;400;500&display=swap"
+    rel="stylesheet" />
 
   <!-- Stylesheets (order matters) -->
   <link rel="stylesheet" href="assets/css/variables.css" />
@@ -27,6 +30,7 @@
   <link rel="stylesheet" href="assets/css/animations.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
+
 <body>
 
   <!-- TOPBAR -->
@@ -43,16 +47,13 @@
       <time class="topbar__clock" id="js-clock" aria-live="polite" aria-atomic="true"></time>
     </div>
     <nav class="topbar__nav" aria-label="Navegacion principal">
-      <a href="#skills"     class="topbar__nav-link" data-i18n="nav.skills">skills</a>
+      <a href="#skills" class="topbar__nav-link" data-i18n="nav.skills">skills</a>
       <a href="#experience" class="topbar__nav-link" data-i18n="nav.experience">experience</a>
-      <a href="#pipeline"   class="topbar__nav-link" data-i18n="nav.pipeline">pipeline</a>
-      <a href="#cloud"      class="topbar__nav-link" data-i18n="nav.cloud">cloud</a>
-      <a href="#contact"    class="topbar__nav-link" data-i18n="nav.contact">contact</a>
-      <button
-        class="topbar__lang-pill"
-        id="js-lang-toggle"
-        aria-label="Switch language / Cambiar idioma"
-      >ES / EN</button>
+      <a href="#pipeline" class="topbar__nav-link" data-i18n="nav.pipeline">pipeline</a>
+      <a href="#cloud" class="topbar__nav-link" data-i18n="nav.cloud">cloud</a>
+      <a href="#contact" class="topbar__nav-link" data-i18n="nav.contact">contact</a>
+      <button class="topbar__lang-pill" id="js-lang-toggle" aria-label="Switch language / Cambiar idioma">ES /
+        EN</button>
     </nav>
   </header>
 
@@ -63,53 +64,77 @@
       <div class="terminal" role="region" aria-label="Terminal interactiva">
 
         <div class="terminal__titlebar" aria-hidden="true">
-          <div class="terminal__dots">
-            <span class="terminal__dot terminal__dot--red"></span>
-            <span class="terminal__dot terminal__dot--yellow"></span>
-            <span class="terminal__dot terminal__dot--green"></span>
-          </div>
-          <span class="terminal__title">bash — darthfabax@web ~ — 120x40</span>
           <span class="terminal__uptime-badge">
             <span class="terminal__uptime-dot"></span>uptime: 99.9%
           </span>
+          <span class="terminal__title">bash — darthfabax@web ~ — 120x40</span>
+          <div class="terminal__dots">
+            <span class="terminal__dot terminal__dot--yellow" title="Minimizar"></span>
+            <span class="terminal__dot terminal__dot--green" title="Maximizar"></span>
+            <span class="terminal__dot terminal__dot--red" title="Cerrar"></span>
+          </div>
         </div>
 
         <div class="terminal__body">
 
           <div class="terminal__line terminal__line--cmd" data-delay="1">
-            <span class="terminal__prompt" aria-hidden="true"><span class="prompt__user">darthfabax</span><span class="prompt__at">@</span><span class="prompt__host">web</span><span class="prompt__path">:~</span><span class="prompt__dollar">$</span></span>
+            <span class="terminal__prompt" aria-hidden="true"><span class="prompt__user">darthfabax</span><span
+                class="prompt__at">@</span><span class="prompt__host">web</span><span
+                class="prompt__path">:~</span><span class="prompt__dollar">$</span></span>
             <span class="terminal__command">cat whoami.yaml</span>
           </div>
 
           <div class="terminal__output" data-delay="2" aria-label="Informacion personal">
             <p class="terminal__yaml-divider">---</p>
-            <p><span class="yaml__key">name:</span>       <span class="yaml__string">"Fabian Aguilar"</span></p>
-            <p><span class="yaml__key">role:</span>       <span class="yaml__string" data-i18n="hero.role">"DevOps Engineer"</span></p>
-            <p><span class="yaml__key">experience:</span> <span class="yaml__number">5+</span> <span class="yaml__comment"># <span data-i18n="hero.years">years</span></span></p>
-            <p><span class="yaml__key">focus:</span>      <span class="yaml__string">"Cloud · IaC · CI/CD · Kubernetes · Linux"</span></p>
+            <p><span class="yaml__key">name:</span> <span class="yaml__string">"Fabian Aguilar"</span></p>
+            <p><span class="yaml__key">role:</span> <span class="yaml__string" data-i18n="hero.role">"DevOps
+                Engineer"</span></p>
+            <p><span class="yaml__key">experience:</span> <span class="yaml__number">5+</span> <span
+                class="yaml__comment"># <span data-i18n="hero.years">years</span></span></p>
+            <p><span class="yaml__key">focus:</span> <span class="yaml__string">"Cloud · IaC · CI/CD · Kubernetes ·
+                Linux"</span></p>
             <p><span class="yaml__key">languages:</span></p>
             <p class="yaml__indent"><span class="yaml__dash">- </span><span class="yaml__string">"Python"</span></p>
-            <p class="yaml__indent"><span class="yaml__dash">- </span><span class="yaml__string">"Bash / Shell"</span></p>
-            <p><span class="yaml__key">status:</span>     <span class="yaml__status"><span class="yaml__pulse-dot" aria-hidden="true"></span> <span data-i18n="hero.status">running</span></span></p>
+            <p class="yaml__indent"><span class="yaml__dash">- </span><span class="yaml__string">"Bash / Shell"</span>
+            </p>
+            <p><span class="yaml__key">status:</span> <span class="yaml__status"><span class="yaml__pulse-dot"
+                  aria-hidden="true"></span> <span data-i18n="hero.status">running</span></span></p>
             <p class="terminal__yaml-comment"># PID 1 · respawn on failure · since 07-01-2023</p>
             <p class="terminal__yaml-divider">---</p>
           </div>
 
           <div class="terminal__line terminal__line--cmd" data-delay="3">
-            <span class="terminal__prompt" aria-hidden="true"><span class="prompt__user">darthfabax</span><span class="prompt__at">@</span><span class="prompt__host">web</span><span class="prompt__path">:~</span><span class="prompt__dollar">$</span></span>
+            <span class="terminal__prompt" aria-hidden="true"><span class="prompt__user">darthfabax</span><span
+                class="prompt__at">@</span><span class="prompt__host">web</span><span
+                class="prompt__path">:~</span><span class="prompt__dollar">$</span></span>
             <span class="terminal__command">ls -la ./skills/</span>
           </div>
 
           <div class="terminal__output" data-delay="4" aria-label="Lista de habilidades">
-            <p><span class="ls__perms">drwxr-xr-x</span><a class="ls__dir ls__dir-link" href="https://github.com/darthfabax-org" target="_blank" rel="noopener noreferrer">automation/</a><span class="ls__comment"># Python · Bash · PowerShell</span></p>
-            <p><span class="ls__perms">drwxr-xr-x</span><a class="ls__dir ls__dir-link" href="https://github.com/darthfabax-org" target="_blank" rel="noopener noreferrer">infrastructure/</a><span class="ls__comment"># AWS · Terraform · Ansible</span></p>
-            <p><span class="ls__perms">drwxr-xr-x</span><a class="ls__dir ls__dir-link" href="https://github.com/darthfabax-org" target="_blank" rel="noopener noreferrer">containers/</a><span class="ls__comment"># Docker · Kubernetes · Helm</span></p>
-            <p><span class="ls__perms">drwxr-xr-x</span><a class="ls__dir ls__dir-link" href="https://github.com/darthfabax-org" target="_blank" rel="noopener noreferrer">cicd/</a><span class="ls__comment"># ArgoCD · GitHub Actions · GitLab CI</span></p>
-            <p><span class="ls__perms">drwxr-xr-x</span><a class="ls__dir ls__dir-link" href="https://github.com/darthfabax-org" target="_blank" rel="noopener noreferrer">targets/</a><span class="ls__comment"># Ubuntu · RHEL · Windows Server</span></p>
+            <p><span class="ls__perms">drwxr-xr-x</span><a class="ls__dir ls__dir-link"
+                href="https://github.com/darthfabax-org" target="_blank" rel="noopener noreferrer">automation/</a><span
+                class="ls__comment"># Python · Bash · PowerShell</span></p>
+            <p><span class="ls__perms">drwxr-xr-x</span><a class="ls__dir ls__dir-link"
+                href="https://github.com/darthfabax-org" target="_blank"
+                rel="noopener noreferrer">infrastructure/</a><span class="ls__comment"># AWS · Terraform ·
+                Ansible</span></p>
+            <p><span class="ls__perms">drwxr-xr-x</span><a class="ls__dir ls__dir-link"
+                href="https://github.com/darthfabax-org" target="_blank" rel="noopener noreferrer">containers/</a><span
+                class="ls__comment"># Docker · Kubernetes · Helm</span></p>
+            <p><span class="ls__perms">drwxr-xr-x</span><a class="ls__dir ls__dir-link"
+                href="https://github.com/darthfabax-org" target="_blank" rel="noopener noreferrer">cicd/</a><span
+                class="ls__comment"># ArgoCD · GitHub Actions · GitLab CI</span></p>
+            <p><span class="ls__perms">drwxr-xr-x</span><a class="ls__dir ls__dir-link"
+                href="https://github.com/darthfabax-org" target="_blank" rel="noopener noreferrer">targets/</a><span
+                class="ls__comment"># Ubuntu · RHEL · Windows Server</span></p>
           </div>
 
           <div class="terminal__line terminal__line--idle" data-delay="5" aria-hidden="true">
-            <span class="terminal__prompt"><span class="prompt__user">darthfabax</span><span class="prompt__at">@</span><span class="prompt__host">web</span><span class="prompt__path">:~</span><span class="prompt__dollar">$</span></span>
+            <span class="terminal__prompt"><span class="prompt__user">darthfabax</span><span
+                class="prompt__at">@</span><span class="prompt__host">web</span><span
+                class="prompt__path">:~</span><span class="prompt__dollar">$</span></span>
+            <input type="text" id="js-terminal-input" class="terminal__input" autocomplete="off" spellcheck="false"
+              aria-label="Terminal input" />
             <span class="terminal__cursor" aria-hidden="true"></span>
           </div>
 
@@ -133,7 +158,9 @@
             <li><span class="badge badge--green">Bash</span></li>
             <li><span class="badge badge--green">PowerShell</span></li>
           </ul>
-          <div class="skill-card__level" aria-hidden="true"><div class="skill-card__level-fill" style="width:95%"></div></div>
+          <div class="skill-card__level" aria-hidden="true">
+            <div class="skill-card__level-fill" style="width:95%"></div>
+          </div>
         </article>
 
         <article class="skill-card">
@@ -144,7 +171,9 @@
             <li><span class="badge badge--blue">Terraform</span></li>
             <li><span class="badge badge--blue">Ansible</span></li>
           </ul>
-          <div class="skill-card__level" aria-hidden="true"><div class="skill-card__level-fill" style="width:90%"></div></div>
+          <div class="skill-card__level" aria-hidden="true">
+            <div class="skill-card__level-fill" style="width:90%"></div>
+          </div>
         </article>
 
         <article class="skill-card">
@@ -155,7 +184,9 @@
             <li><span class="badge badge--yellow">Helm</span></li>
             <li><span class="badge badge--yellow">Docker Compose</span></li>
           </ul>
-          <div class="skill-card__level" aria-hidden="true"><div class="skill-card__level-fill" style="width:88%"></div></div>
+          <div class="skill-card__level" aria-hidden="true">
+            <div class="skill-card__level-fill" style="width:88%"></div>
+          </div>
         </article>
 
         <article class="skill-card">
@@ -167,7 +198,9 @@
             <li><span class="badge badge--green">ArgoCD</span></li>
             <li><span class="badge badge--green">Git</span></li>
           </ul>
-          <div class="skill-card__level" aria-hidden="true"><div class="skill-card__level-fill" style="width:93%"></div></div>
+          <div class="skill-card__level" aria-hidden="true">
+            <div class="skill-card__level-fill" style="width:93%"></div>
+          </div>
         </article>
 
         <article class="skill-card">
@@ -178,7 +211,9 @@
             <li><span class="badge badge--blue">Linux</span></li>
             <li><span class="badge badge--blue">Windows Server</span></li>
           </ul>
-          <div class="skill-card__level" aria-hidden="true"><div class="skill-card__level-fill" style="width:92%"></div></div>
+          <div class="skill-card__level" aria-hidden="true">
+            <div class="skill-card__level-fill" style="width:92%"></div>
+          </div>
         </article>
 
         <article class="skill-card">
@@ -189,7 +224,9 @@
             <li><span class="badge badge--yellow">ELK Stack</span></li>
             <li><span class="badge badge--yellow">CloudWatch</span></li>
           </ul>
-          <div class="skill-card__level" aria-hidden="true"><div class="skill-card__level-fill" style="width:85%"></div></div>
+          <div class="skill-card__level" aria-hidden="true">
+            <div class="skill-card__level-fill" style="width:85%"></div>
+          </div>
         </article>
 
       </div>
@@ -211,9 +248,13 @@
           <div class="timeline__body">
             <h3 class="timeline__role" data-i18n="exp.job1.role">Cloud / DevOps Engineer</h3>
             <p class="timeline__company">Crubyt · Argentina (Remote)</p>
-            <p class="timeline__desc" data-i18n="exp.job1.bullet1">· Managed AWS core services (EC2, S3, CloudFront, CloudWatch, EKS, ECR, Lambda, SNS) to ensure high availability and optimal performance of cloud infrastructure.</p>
-            <p class="timeline__desc" data-i18n="exp.job1.bullet2">· Designed, implemented, and maintained robust CI/CD pipelines using GitHub Actions, Bamboo, GitLab, and Jenkins to streamline software delivery processes.</p>
-            <p class="timeline__desc" data-i18n="exp.job1.bullet3">· Developed and provisioned Infrastructure as Code (IaC) utilizing Terraform and AWS CloudFormation to automate and standardize environment deployments.</p>
+            <p class="timeline__desc" data-i18n="exp.job1.bullet1">· Managed AWS core services (EC2, S3, CloudFront,
+              CloudWatch, EKS, ECR, Lambda, SNS) to ensure high availability and optimal performance of cloud
+              infrastructure.</p>
+            <p class="timeline__desc" data-i18n="exp.job1.bullet2">· Designed, implemented, and maintained robust CI/CD
+              pipelines using GitHub Actions, Bamboo, GitLab, and Jenkins to streamline software delivery processes.</p>
+            <p class="timeline__desc" data-i18n="exp.job1.bullet3">· Developed and provisioned Infrastructure as Code
+              (IaC) utilizing Terraform and AWS CloudFormation to automate and standardize environment deployments.</p>
 
           </div>
         </div>
@@ -225,9 +266,12 @@
           <div class="timeline__body">
             <h3 class="timeline__role" data-i18n="exp.job2.role">System Administrator</h3>
             <p class="timeline__company">Globant · Argentina</p>
-            <p class="timeline__desc" data-i18n="exp.job2.bullet1">· Deployed and orchestrated microservices architectures in Azure Kubernetes Service (AKS) utilizing Helm.</p>
-            <p class="timeline__desc" data-i18n="exp.job2.bullet2">· Developed and managed Infrastructure as Code (IaC) with Terraform on Microsoft Azure to ensure consistent and scalable cloud environments.</p>
-            <p class="timeline__desc" data-i18n="exp.job2.bullet3">· Administered on-premises Windows servers, managing Active Directory and Group Policy Objects (GPOs) to maintain internal security and user access.</p>
+            <p class="timeline__desc" data-i18n="exp.job2.bullet1">· Deployed and orchestrated microservices
+              architectures in Azure Kubernetes Service (AKS) utilizing Helm.</p>
+            <p class="timeline__desc" data-i18n="exp.job2.bullet2">· Developed and managed Infrastructure as Code (IaC)
+              with Terraform on Microsoft Azure to ensure consistent and scalable cloud environments.</p>
+            <p class="timeline__desc" data-i18n="exp.job2.bullet3">· Administered on-premises Windows servers, managing
+              Active Directory and Group Policy Objects (GPOs) to maintain internal security and user access.</p>
           </div>
         </div>
 
@@ -346,7 +390,8 @@
           <h3 class="cloud-card__name">Amazon Web Services</h3>
           <p class="cloud-card__services">EC2 · S3 · EKS · Lambda · RDS · IAM · CloudWatch</p>
           <div class="cloud-card__cert">
-            <a href="https://www.credly.com/badges/f1616292-31fb-4a00-811a-a675f8e470de/public_url" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration: none;">
+            <a href="https://www.credly.com/badges/f1616292-31fb-4a00-811a-a675f8e470de/public_url" target="_blank"
+              rel="noopener noreferrer" class="cert-badge" style="text-decoration: none;">
               <span class="cert-badge__dot" aria-hidden="true"></span>
               AWS Certified Cloud Practitioner
             </a>
@@ -366,17 +411,20 @@
         <div class="contact-row">
           <span class="contact-row__key">email</span>
           <span class="contact-row__arrow" aria-hidden="true">→</span>
-          <a class="contact-row__value contact-row__value--link" href="mailto:contact@darthfabax.com">contact@darthfabax.com</a>
+          <a class="contact-row__value contact-row__value--link"
+            href="mailto:contact@darthfabax.com">contact@darthfabax.com</a>
         </div>
         <div class="contact-row">
           <span class="contact-row__key">github</span>
           <span class="contact-row__arrow" aria-hidden="true">→</span>
-          <a class="contact-row__value contact-row__value--link" href="https://github.com/darthfabax-org" target="_blank" rel="noopener noreferrer">github.com/darthfabax-org</a>
+          <a class="contact-row__value contact-row__value--link" href="https://github.com/darthfabax-org"
+            target="_blank" rel="noopener noreferrer">github.com/darthfabax-org</a>
         </div>
         <div class="contact-row">
           <span class="contact-row__key">linkedin</span>
           <span class="contact-row__arrow" aria-hidden="true">→</span>
-          <a class="contact-row__value contact-row__value--link" href="https://linkedin.com/in/fabianaguilarl" target="_blank" rel="noopener noreferrer">linkedin.com/in/fabianaguilarl</a>
+          <a class="contact-row__value contact-row__value--link" href="https://linkedin.com/in/fabianaguilarl"
+            target="_blank" rel="noopener noreferrer">linkedin.com/in/fabianaguilarl</a>
         </div>
 
         <div class="contact-row">
@@ -387,7 +435,9 @@
         <div class="contact-row">
           <span class="contact-row__key">curriculum</span>
           <span class="contact-row__arrow" aria-hidden="true">→</span>
-          <a data-i18n="contact.cv" class="contact-row__value contact-row__value--link" href="https://www.dropbox.com/scl/fi/l73ng187r4wdtb3ggaonu/FabianAguilarDevops.pdf?rlkey=gc8xtdrfrwvkl95tbfwblumut&e=2&st=st0g6f5a&dl=1" download="FabianAguilarDevOps.pdf" target="_blank" rel="noopener noreferrer">download cv</a>
+          <a data-i18n="contact.cv" class="contact-row__value contact-row__value--link"
+            href="https://www.dropbox.com/scl/fi/l73ng187r4wdtb3ggaonu/FabianAguilarDevops.pdf?rlkey=gc8xtdrfrwvkl95tbfwblumut&e=2&st=st0g6f5a&dl=1"
+            download="FabianAguilarDevOps.pdf" target="_blank" rel="noopener noreferrer">download cv</a>
         </div>
         <div class="contact-row">
           <span class="contact-row__key" data-i18n="contact.status">status</span>
@@ -415,10 +465,11 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/clock.js"      defer></script>
+  <script src="assets/js/clock.js" defer></script>
   <script src="assets/js/animations.js" defer></script>
-  <script src="assets/js/i18n.js"       defer></script>
-  <script src="assets/js/terminal.js"   defer></script>
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/terminal.js" defer></script>
 
 </body>
+
 </html>

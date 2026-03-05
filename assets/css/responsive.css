@@ -47,7 +47,7 @@
   }
 
   .cloud-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .skills-grid {
@@ -258,6 +258,7 @@
 
 /* ── Wide screens: ≥ 1200px ── */
 @media (min-width: 1200px) {
+
   .hero,
   .section {
     max-width: var(--max-width);

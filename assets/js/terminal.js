@@ -11,8 +11,12 @@
   if (!input) return;
 
   const terminalBody = input.closest('.terminal__body');
-  const idleLine     = input.closest('.terminal__line--idle');
+  const idleLine = input.closest('.terminal__line--idle');
   let sudoMode = false;
+
+  terminalBody.addEventListener('click', () => {
+    input.focus();
+  });
 
   function escapeHtml(str) {
     const div = document.createElement('div');
@@ -49,13 +53,13 @@
       // Permission denied + sudo hint
       insert(
         '<p class="terminal__error-line">' +
-          '<span class="terminal__error-label">bash:</span> ' +
-          '<span class="terminal__error-cmd">' + safe + '</span>' +
-          ': <span class="terminal__error-msg">Permission denied</span>' +
+        '<span class="terminal__error-label">bash:</span> ' +
+        '<span class="terminal__error-cmd">' + safe + '</span>' +
+        ': <span class="terminal__error-msg">Permission denied</span>' +
         '</p>' +
         '<p class="terminal__sudo-hint">' +
-          '<span class="terminal__sudo-arrow">→</span> ' +
-          'hint: try <span class="terminal__sudo-cmd">sudo ' + safe + '</span>' +
+        '<span class="terminal__sudo-arrow">→</span> ' +
+        'hint: try <span class="terminal__sudo-cmd">sudo ' + safe + '</span>' +
         '</p>',
         'terminal__output'
       );
