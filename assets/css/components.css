@@ -91,10 +91,17 @@
 }
 
 .terminal__prompt {
-  color: var(--color-green);
   user-select: none;
   flex-shrink: 0;
+  white-space: nowrap;
 }
+
+/* ── Prompt color parts (username@host:path$) ── */
+.prompt__user   { color: var(--color-green); }
+.prompt__at     { color: var(--color-gray); }
+.prompt__host   { color: var(--color-cyan); }
+.prompt__path   { color: var(--color-gray); }
+.prompt__dollar { color: var(--color-green); }
 
 .terminal__command {
   color: var(--color-white);
@@ -159,8 +166,8 @@
   width: 9px;
   height: 1em;
   background: var(--color-green);
-  vertical-align: text-bottom;
-  margin-left: 2px;
+  flex-shrink: 0;
+  align-self: center;   /* vertically center in the flex row */
 }
 
 /* ── Skill level bar ── */
@@ -539,19 +546,21 @@
 .timeline__item::before {
   content: '';
   position: absolute;
-  left: calc(-1 * var(--space-8) - 3px);
+  /* center the 7 px dot on the 1 px border: -(padding + border/2 + dot/2) = -(32+0.5+3.5) = -36 px */
+  left: calc(-1 * var(--space-8) - 4px);
   top: 6px;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: var(--color-bg-0);
-  border: 1px solid var(--color-green-dim);
+  border: 1px solid rgba(57, 255, 131, 0.3);
 }
 
 .timeline__item--active::before {
   background: var(--color-green);
   border-color: var(--color-green);
-  box-shadow: 0 0 8px rgba(57, 255, 131, 0.4);
+  box-shadow: 0 0 8px rgba(57, 255, 131, 0.5);
+  animation: pulse-dot 2s ease-in-out infinite;
 }
 
 .timeline__meta {

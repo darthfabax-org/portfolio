@@ -1,7 +1,7 @@
 /**
  * animations.js
  * Handles:
- *  1. Terminal line staggered reveal (simulates typewriter feel)
+ *  1. Terminal line staggered reveal — uses data-delay attribute for ordering
  *  2. Scroll-triggered section & card reveals (IntersectionObserver)
  *  3. Metric bar fill animation on scroll
  */
@@ -12,14 +12,12 @@
   /* ── 1. Terminal staggered reveal ─────────────────────────── */
 
   const TERMINAL_DELAY_BASE = 400;  // ms before first line
-  const TERMINAL_STEP       = 320;  // ms between each element
+  const TERMINAL_STEP       = 320;  // ms between each step
 
-  const terminalLines = document.querySelectorAll(
-    '.terminal__line, .terminal__output'
-  );
-
-  terminalLines.forEach((el, index) => {
-    const delay = TERMINAL_DELAY_BASE + index * TERMINAL_STEP;
+  document.querySelectorAll('.terminal__line, .terminal__output').forEach((el) => {
+    // data-delay is 1-based: step 1 fires at base, step 2 at base+step, etc.
+    const step  = parseInt(el.dataset.delay ?? '1', 10);
+    const delay = TERMINAL_DELAY_BASE + (step - 1) * TERMINAL_STEP;
     setTimeout(() => el.classList.add('is-visible'), delay);
   });
 
@@ -39,11 +37,9 @@
     { threshold: REVEAL_THRESHOLD }
   );
 
-  const revealTargets = document.querySelectorAll(
-    '.section, .skill-card, .cloud-card, .timeline__item'
-  );
-
-  revealTargets.forEach((el) => revealObserver.observe(el));
+  document
+    .querySelectorAll('.section, .skill-card, .cloud-card, .timeline__item')
+    .forEach((el) => revealObserver.observe(el));
 
   /* ── 3. Metric bars fill on scroll ─────────────────────────── */
 
@@ -57,10 +53,8 @@
         const widthPct = metric.dataset.width;
 
         if (fill && widthPct) {
-          // Slight delay so it fires after section reveal
-          setTimeout(() => {
-            fill.style.width = `${widthPct}%`;
-          }, 200);
+          // Small delay so fill fires after the section fade-in
+          setTimeout(() => { fill.style.width = `${widthPct}%`; }, 200);
         }
 
         metricObserver.unobserve(metric);
