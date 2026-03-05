@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Window background -->
+  <rect width="32" height="32" rx="6" fill="#0d1010"/>
+  <!-- Subtle outer border -->
+  <rect x="0.5" y="0.5" width="31" height="31" rx="5.5" fill="none" stroke="#1e3a30" stroke-width="1"/>
+
+  <!-- Title bar -->
+  <rect x="1" y="1" width="30" height="9" rx="5" fill="#111515"/>
+  <rect x="1" y="6"  width="30" height="4" fill="#111515"/>
+
+  <!-- Traffic-light dots -->
+  <circle cx="5.5"  cy="5.5" r="2" fill="#ff5f56"/>
+  <circle cx="11"   cy="5.5" r="2" fill="#ffbd2e"/>
+  <circle cx="16.5" cy="5.5" r="2" fill="#27c93f"/>
+
+  <!-- Prompt chevron ">" -->
+  <path d="M5 15 L10.5 19.5 L5 24"
+        stroke="#39ff83" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round"
+        fill="none"/>
+
+  <!-- Cursor block -->
+  <rect x="13.5" y="16.5" width="14" height="6" rx="1.5" fill="#39ff83"/>
+</svg>
