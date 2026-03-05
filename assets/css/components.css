@@ -78,11 +78,13 @@
 
 .terminal__dot--yellow::after {
   content: '−';
+  margin-bottom: 2px;
 }
 
 .terminal__dot--green::after {
   content: '□';
   font-size: 9px;
+  margin-bottom: 1px;
 }
 
 .terminal__dot--red::after {
@@ -304,7 +306,7 @@
 }
 
 /* Hide the static block cursor when input is focused */
-.terminal__input:focus~.terminal__cursor {
+.terminal__line--idle:focus-within .terminal__cursor {
   display: none;
 }
 

@@ -86,7 +86,10 @@
   }
 
   .topbar__chip {
-    padding: 2px 6px 2px 3px;
+    padding: 2px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
   }
 
   .topbar__avatar {
